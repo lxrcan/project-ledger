@@ -1,0 +1,33 @@
+# Project ledger configuration. Read by tools/ledger.py.
+project: <Project name>
+items_dir: docs/items
+generated_dir: docs/generated
+releases_dir: docs/releases
+reviews_dir: docs/reviews
+
+# Areas group requirements in the generated views. Keys are used in the `area` field.
+areas:
+  core: Core behaviour
+  data: Data and formats
+  ui: Interface
+  process: Process and tooling
+
+# Names to roles. Agents go here under the author name they commit with.
+# If one person holds several roles, list them under each and say why in a comment.
+roles:
+  pm: [<name>]
+  lead: [<name>]            # e.g. the same person as pm on a solo project; say so here
+  designer: []
+  implementer: [<agent-name>]
+
+# Optional: ID blocks per agent, so parallel branches don't collide on `ledger.py new`.
+# id_blocks:
+#   builder: {REQ: [200, 299], ISS: [200, 299]}
+
+# Which optional modules are on. Informational; AGENTS.md carries the text.
+modules:
+  multi_agent: false
+  shared_resource: false
+  generated_artefacts: false
+  status_surface: false
+  invariants: true
